@@ -19,7 +19,7 @@
 ## Databases.
 
  * SQLite (To development)
- * Postgress (To deploy
+ * Postgress (To deploy)
  
  ## Hosts.
  
@@ -28,6 +28,4 @@
  ## Text Editor / IDLE
  
  * VSCode
- 
- <!-- images -->
-[progress-img]: https://i.ibb.co/9Y4XLrr/xEvZs.png
+
