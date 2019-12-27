@@ -19,7 +19,7 @@
 ## Databases.
 
  * SQLite (To development)
- * Postgress (To deploy)
+ * PostgreSQL (To deploy)
  
  ## Hosts.
  
