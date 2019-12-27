@@ -13,21 +13,23 @@ def home(request):
 
 def lista_pessoas(request):
     pessoas = Pessoa.objects.all()
-    form = PessoasForm()
-    data = {'pessoas': pessoas, 'form': form}
+    p_form = PessoasForm()
+    p_data = {'pessoas': pessoas, 'p_form': p_form}
     return render(request, 'core/lista_pessoas.html', data)
 
 def pessoa_novo(request):
-    form = PessoasForm(request.POST or None)
-    if  form.is_valid():
-        form.save()
+    p_form = PessoasForm(request.POST or None)
+    if  p_form.is_valid():
+        p_form.save()
     return redirect('core_lista_pessoas')
 
 
 def lista_veiculos(request):
     veiculos = Veiculo.objects.all()
-    return render(request, 'core/lista_veiculos.html', 
-                            {'veiculos': veiculos})
+    v_data = {'veiculos': veiculos}
+    return render(request, 'core/lista_veiculos.html', v_data )
+
+
 
 
 def lista_rotativos(request):
