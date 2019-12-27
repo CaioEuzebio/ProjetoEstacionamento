@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Pessoa, Veiculo
+from .models import Pessoa, Veiculo, MovRotativo
 
 
 
@@ -19,3 +19,8 @@ def lista_pessoas(request):
 def lista_veiculos(request):
     veiculos = Veiculo.objects.all()
     return render(request, 'core/lista_veiculos.html', {'veiculos': veiculos})
+
+
+def lista_rotativos(request):
+    rotativos = MovRotativo.objects.all()
+    return render(request, 'core/lista_rotativos.html', {'rotativos': rotativos})
