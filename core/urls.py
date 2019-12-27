@@ -4,14 +4,17 @@ from .views import ( home,
                     lista_veiculos, 
                     lista_rotativos,
                     lista_mensalistas,
-                    lista_mov_mensalistas )
+                    lista_mov_mensalistas,
+                    pessoa_novo )
 
 urlpatterns = [
     url(r'^$', home, name='core_home'),
     url(r'^pessoas/$', lista_pessoas, name='core_lista_pessoas'),
+    url(r'^pessoa-novo/$', pessoa_novo, name='core_pessoa_novo'),
     url(r'^veiculo/$', lista_veiculos, name='core_lista_veiculos'),
     url(r'^rotativos/$', lista_rotativos, name='core_lista_rotativos'),
     url(r'^mensalistas/$', lista_mensalistas, name='core_lista_mensalistas'),
     url(r'^mov-mensalistas/$', lista_mov_mensalistas, name='core_lista_mov_mensalistas')
+
 
 ]
