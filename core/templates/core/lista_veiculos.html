@@ -1,7 +1,18 @@
 <h2>Lista Veiculos</h2>
 
+
 <ul>
 {% for veiculo in veiculos %}
-    <li>{{ veiculo.marca }}</li>
+    <li>{{ veiculo.placa }}</li>
 {%endfor%}
 </ul>
+
+
+
+
+<form action="{% url 'core_veiculos_novo' %}" method="POST"> {% csrf_token %}
+    {{ v_form.as_p }}
+    
+    <button type="submit">Cadastrar</button>
+    
+</form>
