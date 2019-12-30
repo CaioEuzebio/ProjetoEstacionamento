@@ -5,3 +5,12 @@
     <li>{{ mov.mensalista }} - {{ mov.total }}</li>
 {%endfor%}
 </ul>
+
+
+<form action="{% url 'core_mov_mensalistas_novo' %}" method="POST"> {% csrf_token %}
+    
+    {{ mm_form.as_p }}
+    
+    <button type="submit">Cadastrar</button>
+    
+</form>

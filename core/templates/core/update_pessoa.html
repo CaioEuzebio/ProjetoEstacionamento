@@ -1,0 +1,14 @@
+<h2>Atualizando Pessoa: {{ pessoa }}</h2>
+
+<ul>
+{% for pessoa in pessoas %}
+    <li>{{ pessoa.nome }}</li>
+{%endfor%}
+</ul>
+
+<form action="{% url 'core_pessoa_update'%}" method="POST"> {% csrf_token %}
+    {{ p_form.as_p }}
+    
+    <button type="submit">Atualizar</button>
+    
+</form>
