@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "devpark/bin/python3.6",
-    "files.associations": { "*.html": "html" }
+    "python.pythonPath": "/usr/local/bin/python3",
+    "files.associations":  {"*.html": "html"}
 }

@@ -12,6 +12,7 @@ from .views import ( home,
                     mov_mensalistas_novo,
                     pessoa_update )
 
+
 urlpatterns = [
     url(r'^$', home, name='core_home'),
     url(r'^pessoas/$', lista_pessoas, name='core_lista_pessoas'),

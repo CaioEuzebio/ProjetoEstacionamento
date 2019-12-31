@@ -6,7 +6,7 @@ from .forms import PessoasForm, VeiculosForm, RotativosForm, MensalistaForm, Mov
 
 
 def home(request):
-    context = {'mensagem': 'Olá Mundo!'}
+    context = {'mensagem': 'Essa é a pagina inicial!'}
     return render(request, 'core/index.html', context)
 
 
@@ -16,6 +16,7 @@ def lista_pessoas(request):
     p_form = PessoasForm()
     p_data = {'pessoas': pessoas, 'p_form': p_form}
     return render(request, 'core/lista_pessoas.html', p_data)
+
 
 def pessoa_novo(request):
     p_form = PessoasForm(request.POST or None)
@@ -53,6 +54,8 @@ def veiculos_novo(request):
         v_form.save()
     return redirect('core_lista_veiculos')
 
+    
+
 
 def lista_rotativos(request):
     rotativos = MovRotativo.objects.all()
@@ -87,9 +90,11 @@ def lista_mov_mensalistas(request):
     mm_data = {'movmensalistas': movmensalistas, 'mm_form': mm_form}
     return render(request, 'core/lista_mov_mensalistas.html', mm_data)
 
+
 def mov_mensalistas_novo(request):
     mm_form = MovMensalForm(request.POST or None)
     if  mm_form.is_valid():
         mm_form.save()
     return redirect('core_lista_mov_mensalistas')
+
 

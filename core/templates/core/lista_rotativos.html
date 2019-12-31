@@ -1,3 +1,8 @@
+
+
+
+
+
 <h2>Lista Rotativos</h2>
 
 <ul>
@@ -6,9 +11,7 @@
 {%endfor%}
 </ul>
 
-
-<form action="{% url 'core_pessoa_novo' %}" method="POST"> {% csrf_token %}
-    
+<form action="{% url 'core_rotativos_novo' %}" method="POST"> {% csrf_token %}
     {{ r_form.as_p }}
     
     <button type="submit">Cadastrar</button>
