@@ -1,0 +1,13 @@
+<h2> Atualizando o Veiculo: {{ veiculo }} </h2>
+
+
+
+<form action="{% url 'core_update_rotativos' veiculo.id %}" method="POST"> 
+    
+    {% csrf_token %}
+
+    {{ v_form.as_p }}
+    
+    <button type="submit">Atualizar</button>
+    
+</form>

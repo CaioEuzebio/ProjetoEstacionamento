@@ -1,0 +1,11 @@
+<h2>Atualizando Rotativo: {{ rotativos }}</h2>
+
+
+<form action="{% url 'core_update_rotativos' rotativos.id%}" method="POST"> 
+    {% csrf_token %}
+    
+    {{ r_form.as_p }}
+        
+    <button type="submit">Atualizar</button>
+        
+</form>

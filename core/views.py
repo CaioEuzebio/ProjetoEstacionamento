@@ -54,6 +54,20 @@ def veiculos_novo(request):
         v_form.save()
     return redirect('core_lista_veiculos')
 
+
+def veiculo_update(request, id):   
+    v_data = {}
+    veiculo = Veiculo.objects.get(id=id)
+    v_form = VeiculosForm(request.POST or None, instance=veiculo)
+    v_data['veiculo'] = veiculo
+    v_data['v_form'] = v_form
+    if request.method == 'POST':
+        if v_form.is_valid():
+            v_form.save()
+            return redirect('core_lista_veiculos')
+    else:
+        return render(request, 'core/veiculo_update.html', v_data)    
+
     
 
 
@@ -68,6 +82,21 @@ def rotativos_novo(request):
     if  r_form.is_valid():
         r_form.save()
     return redirect('core_lista_rotativos')
+
+
+def update_rotativos(request, id):   
+    r_data = {}
+    rotativos = MovRotativo.objects.get(id=id)
+    r_form = RotativosForm(request.POST or None, instance=rotativos)
+    r_data['rotativos'] = rotativos
+    r_data['r_form'] = r_form
+    if request.method == 'POST':
+        if r_form.is_valid():
+            r_form.save()
+            return redirect('core_lista_rotativos')
+    else:
+        return render(request, 'core/update_rotativos.html', r_data)    
+
 
 
 def lista_mensalistas(request):
