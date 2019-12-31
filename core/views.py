@@ -28,7 +28,7 @@ def pessoa_novo(request):
 def pessoa_update(request, id):   
     p_data = {}
     pessoa = Pessoa.objects.get(id=id)
-    p_form = PessoasForm(request.POST or None, instace=pessoa)
+    p_form = PessoasForm(request.POST or None, instance=pessoa)
     p_data['pessoa'] = pessoa
     p_data['p_form'] = p_form
     if request.method == 'POST':
