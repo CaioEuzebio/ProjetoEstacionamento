@@ -2,9 +2,13 @@
 
 <ul>
 {% for mensalista in mensalistas %}
-    <li>{{ mensalista.veiculo }} - {{ mensalista.inicio }}</li>
+
+<li> {{ mensalista.veiculo }} - {{ mensalista.inicio }} </li> 
+  
+ 
 {%endfor%}
 </ul>
+
 
 
 <form action="{% url 'core_mensalista_novo' %}" method="POST"> {% csrf_token %}

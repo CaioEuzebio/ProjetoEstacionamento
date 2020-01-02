@@ -113,11 +113,27 @@ def mensalista_novo(request):
     return redirect('core_lista_mensalistas')
 
 
+def update_mensalistas(request, id):   
+    m_data = {}
+    mensalistas = Mensalista.objects.get(id=id)
+    m_form = MensalistaForm(request.POST or None, instance=mensalistas)
+    m_data['mensalistas'] = mensalistas
+    m_data['m_form'] = m_form
+    if request.method == 'POST':
+        if m_form.is_valid():
+            m_form.save()
+            return redirect('core_lista_mensalistas')
+    else:
+        return render(request, 'core/update_mensalistas.html', m_data) 
+
+
 def lista_mov_mensalistas(request):
+    mm_data = {}
     movmensalistas = MovMensalista.objects.all()
     mm_form = MovMensalForm()
     mm_data = {'movmensalistas': movmensalistas, 'mm_form': mm_form}
     return render(request, 'core/lista_mov_mensalistas.html', mm_data)
+
 
 
 def mov_mensalistas_novo(request):
@@ -125,5 +141,19 @@ def mov_mensalistas_novo(request):
     if  mm_form.is_valid():
         mm_form.save()
     return redirect('core_lista_mov_mensalistas')
+
+    
+def update_mov_mensalistas(request, id):   
+    mm_data = {}
+    movmensalistas = MovMensalista.objects.get(id=id)
+    mm_form = MovMensalForm(request.POST or None, instance=movmensalistas)
+    mm_data['movmensalistas'] = movmensalistas
+    mm_data['mm_form'] = mm_form
+    if request.method == 'POST':
+        if mm_form.is_valid():
+            mm_form.save()
+            return redirect('core_lista_mov_mensalistas')
+    else:
+        return render(request, 'core/update_mov_mensalistas.html', mm_data) 
 
 
