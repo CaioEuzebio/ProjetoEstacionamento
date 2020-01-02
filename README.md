@@ -1,6 +1,6 @@
 # Progress Status Overview:
 
-![](progress.png)
+![](progress_up.png)
 
 # Park System build Using Django.
 
