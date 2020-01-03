@@ -41,6 +41,17 @@ def pessoa_update(request, id):
 
 
 
+def pessoa_delete(request, id):   
+    pessoa = Pessoa.objects.get(id=id)
+    if request.method == 'POST':
+            pessoa.delete()
+            return redirect('core_lista_pessoas')
+    else:
+        return render(request, 'core/delete_pessoa_confirm.html', {'pessoa': pessoa})
+
+
+
+
 def lista_veiculos(request):
     veiculos = Veiculo.objects.all()
     v_form = VeiculosForm()
@@ -52,7 +63,7 @@ def veiculos_novo(request):
     v_form = VeiculosForm(request.POST or None)
     if  v_form.is_valid():
         v_form.save()
-    return redirect('core_lista_veiculos')
+    return redirect('veiculo')
 
 
 def veiculo_update(request, id):   
@@ -68,7 +79,15 @@ def veiculo_update(request, id):
     else:
         return render(request, 'core/veiculo_update.html', v_data)    
 
+
     
+def veiculo_delete(request, id):   
+    veiculo = Veiculo.objects.get(id=id)
+    if request.method == 'POST':
+            veiculo.delete()
+            return redirect('core_lista_veiculos')
+    else:
+        return render(request, 'core/delete_veiculo_confirm.html', {'veiculo': veiculo})
 
 
 def lista_rotativos(request):
