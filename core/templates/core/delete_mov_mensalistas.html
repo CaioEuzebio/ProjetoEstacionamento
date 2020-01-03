@@ -1,0 +1,10 @@
+<h2>Certeza que deseja deletar o Mov. Mesalista: {{ movmensalistas }} ? </h2>
+
+
+<form method="POST" action="{% url 'core_delete_mov_mensalistas' movmensalistas.id %}">
+
+    {% csrf_token %}
+
+    <button type="submit" > Deletar </button>
+    
+</form>

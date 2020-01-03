@@ -3,7 +3,7 @@
 <ul>
 {% for mensalista in mensalistas %}
 
-<a href="{% url 'core_update_mensalistas' movmensalista.id %}"> <li> {{ mensalista.veiculo }} - {{ mensalista.inicio }} </li> </a>
+<a href="{% url 'core_update_mensalistas' mensalista.id %}"> <li> {{ mensalista.veiculo }} - {{ mensalista.inicio }} </li> </a>
 
  
 {%endfor%}
