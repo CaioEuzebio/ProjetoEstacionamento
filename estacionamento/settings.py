@@ -86,7 +86,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'statics/bootstrap'
+STATIC_ROOT = 'static/bootstrap'
 
 STATICFILES_DIRS = [
     'static_files'
