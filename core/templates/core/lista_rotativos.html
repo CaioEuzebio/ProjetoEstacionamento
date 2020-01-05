@@ -49,11 +49,30 @@
         </div>
 
         <div class="col-sm-6">
-            <ul>
-                {% for rotativo in rotativos %}
-                <a href="{% url 'core_update_rotativos' rotativo.id %}"> <li> {{ rotativo.veiculo }} </li> </a>
-                {%endfor%}
-            </ul>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">CheckIn</th>
+                    <th scope="col">CheckOut</th>
+                    <th scope="col">Valor Hora</th>
+                    <th scope="col">Veículo</th>
+                    <th scope="col">Pago</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for rotativo in rotativos %}
+                        <tr>
+                            <th scope="row">{{rotativo.id}}</th>
+                            <td>{{rotativo.checkin}}</td>
+                            <td>{{rotativo.checkout}}</td>
+                            <td>{{rotativo.valor_hora}}</td>
+                            <td>{{rotativo.veiculo}}</td>
+                            <td>{{rotativo.pago}}</td>
+                        </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
         </div>
     </div>
 

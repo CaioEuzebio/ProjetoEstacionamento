@@ -48,14 +48,29 @@
             </form>
         </div>
 
-        <div class="col-sm-6">
-            <ul>
-                {% for pessoa in pessoas %}
-                    <a href="{% url 'core_pessoa_update' pessoa.id %}"> <li> {{ pessoa.nome}} </li> </a>
-            
-                    
-                {%endfor%}
-                </ul>
+        <div class="col-sm-6">      
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Endereço</th>
+                        <th scope="col">Telefone</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for pessoa in pessoas %}
+                            <tr>
+                                <th scope="row">{{pessoa.id}}</th>
+                                <td>{{pessoa.nome}}</td>
+                                <td>{{pessoa.endereco}}</td>
+                                <td>{{pessoa.telefone}}</td>
+                            </tr>
+                      {%endfor%}
+                    </tbody>
+                  </table>
+                  
+                  
         </div>
     </div>
 
