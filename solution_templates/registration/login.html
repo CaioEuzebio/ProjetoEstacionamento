@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% load bootstrap %}
+
+{% block menu %}
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'core_home' %}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Opções</a>
+        <div class="dropdown-menu">
+            
+            <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
+            <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veículos</a>
+            <a class="dropdown-item" href="{% url 'core_lista_rotativos' %}">Rotativos</a>
+            <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
+            <a class="dropdown-item" href="{% url 'core_lista_mov_mensalistas' %}">Mov Mensalistas</a>
+            
+
+        <div class="dropdown-divider">
+        </div>
+            <a class="dropdown-item" href="{% url 'core_home' %}">Voltar a Home</a>
+        </div>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link active" href="#">Login</a>
+        </li>
+    </ul>
+{% endblock %}
+
+
+
+    {% block main %}
+    
+<div align="center">
+    <h2>Por favor os dados para efetuar o login.</h2>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+        {% else %}
+        <p>Please login to see this page.</p>
+        {% endif %}
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <table>
+    <tr>
+        <td>{{ form.username.label_tag }}</td>
+        <tr>
+            <td>{{ form.username }}</td>
+        </tr>
+    </tr>
+    <tr>
+        <td>{{ form.password.label_tag }}</td>
+        <tr>
+            <td>{{ form.password }}</td>
+        </tr>
+    </tr>
+    </table>
+    <p>
+
+    </p>
+    <input type="submit" class="btn btn-primary" value="login">
+    <input type="hidden" name="next" value="{{ next }}">
+    </form>
+
+    {# Assumes you setup the password_reset view in your URLconf #}
+    <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+</div>
+
+{% endblock %}

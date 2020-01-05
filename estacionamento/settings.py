@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrapform',
+    'website',
     'core',
 ]
 
@@ -92,3 +93,7 @@ STATIC_ROOT = 'static'
 STATICFILES_DIRS = [
     'estacionamento/static'
 ]
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'core_home'
+LOGOUT_REDIRECT_URL = 'login'
