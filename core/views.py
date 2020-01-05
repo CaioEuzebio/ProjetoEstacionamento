@@ -69,7 +69,7 @@ def veiculos_novo(request):
     v_form = VeiculosForm(request.POST or None)
     if  v_form.is_valid():
         v_form.save()
-    return redirect('veiculo')
+    return redirect('core_lista_veiculos')
 
 
 def veiculo_update(request, id):   
