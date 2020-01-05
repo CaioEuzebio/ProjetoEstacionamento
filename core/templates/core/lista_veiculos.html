@@ -1,25 +1,34 @@
- {% extends 'base.html' %}
-
- {% block main %}
-
-    <h2>Lista Veiculos</h2>
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block main %}
 
 
-    <ul>
-    {% for veiculo in veiculos %}
-
-    <a href="{% url 'core_veiculo_update' veiculo.id %}"> <li> {{ veiculo.placa}} </li> </a>    
-
-    {%endfor%}
-    </ul>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Lista Veiculos</h2>
+    </div>
+</div>
 
 
+<div class="row">
+    <div class="col-sm-6">
+        <form action="{% url 'core_veiculos_novo' %}" method="POST"> {% csrf_token %}
+            {{ v_form | bootstrap }}
+            
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            
+        </form>
+    </div>
 
-    <form action="{% url 'core_veiculos_novo' %}" method="POST"> {% csrf_token %}
-        {{ v_form.as_p }}
+    <div class="col-sm-6">
+        <ul>
+            {% for veiculo in veiculos %}
         
-        <button type="submit">Cadastrar</button>
+            <a href="{% url 'core_veiculo_update' veiculo.id %}"> <li> {{ veiculo.placa}} </li> </a>    
         
-    </form>
+            {%endfor%}
+        </ul>
+    </div>
+</div>
 
 {% endblock %}

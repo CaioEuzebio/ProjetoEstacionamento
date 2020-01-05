@@ -2,15 +2,19 @@
 
 {% block main %}
 
-<h2>Certeza que deseja deletar o Mov. Mesalista: {{ movmensalistas }} ? </h2>
+<div class="row">
+    <div class="col">
+        <h2>Certeza que deseja deletar o Mov. Mesalista: {{ movmensalistas }} ? </h2>
 
 
-    <form method="POST" action="{% url 'core_delete_mov_mensalistas' movmensalistas.id %}">
-        
-        {% csrf_token %}
-        
-        <button type="submit" > Deletar </button>
-        
-    </form>
+        <form method="POST" action="{% url 'core_delete_mov_mensalistas' movmensalistas.id %}">
+            
+            {% csrf_token %}
+            
+            <button type="submit" class="btn btn-danger" > Deletar </button>
+            
+        </form>
+    </div>
+</div>
 
 {% endblock %}
