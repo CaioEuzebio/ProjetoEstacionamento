@@ -11,7 +11,7 @@
         <div class="dropdown-menu">
             
             <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
-            <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veículos</a>
+            <a class="dropdown-item active" href="{% url 'core_lista_veiculos' %}">Veículos</a>
             <a class="dropdown-item" href="{% url 'core_lista_rotativos' %}">Rotativos</a>
             <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
             <a class="dropdown-item" href="{% url 'core_lista_mov_mensalistas' %}">Mov Mensalistas</a>
@@ -46,17 +46,40 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
             
         </form>
+        <p>
+
+        </p>
     </div>
 
-    <div class="col-sm-6">
-        <ul>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Placa</th>
+            <th scope="col">Cor</th>
+            <th scope="col">Proprietário</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Observações</th>
+            <th scope="col">Atualizar</th>
+          </tr>
+        </thead>
+        <tbody>
             {% for veiculo in veiculos %}
-        
-            <a href="{% url 'core_veiculo_update' veiculo.id %}"> <li> {{ veiculo.placa}} </li> </a>    
-        
-            {%endfor%}
-        </ul>
-    </div>
+                <tr>
+                    <th scope="row">{{veiculo.id}}</th>
+                    <td>{{veiculo.marca}}</td>
+                    <td>{{veiculo.placa}}</td>
+                    <td>{{veiculo.cor}}</td>
+                    <td>{{veiculo.proprietario}}</td>
+                    <td>{{veiculo.modelo}}</td>
+                    <td>{{veiculo.observacoes}}</td>
+                    <td><a href="{% url 'core_veiculo_update' veiculo.id %}" class="btn btn-primary">Atualizar</a></td>
+                    
+                </tr>
+          {%endfor%}
+        </tbody>
+      </table>
 </div>
 
 {% endblock %}

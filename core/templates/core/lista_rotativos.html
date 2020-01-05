@@ -12,7 +12,7 @@
             
             <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
             <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veículos</a>
-            <a class="dropdown-item" href="{% url 'core_lista_rotativos' %}">Rotativos</a>
+            <a class="dropdown-item active" href="{% url 'core_lista_rotativos' %}">Rotativos</a>
             <a class="dropdown-item" href="{% url 'core_lista_mensalistas' %}">Mensalistas</a>
             <a class="dropdown-item" href="{% url 'core_lista_mov_mensalistas' %}">Mov Mensalistas</a>
             
@@ -30,25 +30,20 @@
 {% block main %}
 
     <div class="row">
-        <div class="col-sm-12">
-            <h2>Lista Rotativos</h2>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-sm-6">
+        <div class="col">
+            <h2>Cadastro Rotativos</h2>
             <form action="{% url 'core_pessoa_novo' %}" method="POST"> 
                 <form action="{% url 'core_rotativos_novo' %}" method="POST"> {% csrf_token %}
             
                     {{ r_form | bootstrap }}
                     
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    
+                    <p></p>
                 </form>
-        </div>
+            
 
-        <div class="col-sm-6">
+            <h1>Lista Rotativos</h1>
+      
             <table class="table">
                 <thead class="thead-dark">
                   <tr>
@@ -58,6 +53,7 @@
                     <th scope="col">Valor Hora</th>
                     <th scope="col">Veículo</th>
                     <th scope="col">Pago</th>
+                    <th scope="col">Atualizar</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -69,11 +65,14 @@
                             <td>{{rotativo.valor_hora}}</td>
                             <td>{{rotativo.veiculo}}</td>
                             <td>{{rotativo.pago}}</td>
+                            <td><a href="{% url 'core_update_rotativos' rotativo.id %}" class="btn btn-primary">Atualizar</a></td>
+                            
                         </tr>
                   {%endfor%}
                 </tbody>
               </table>
-        </div>
+       
     </div>
+</div>
 
 {% endblock %}
