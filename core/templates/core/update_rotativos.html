@@ -1,13 +1,18 @@
-<h2>Atualizando Rotativo: {{ rotativos }}</h2>
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <h2>Atualizando Rotativo: {{ rotativos }}</h2>
 
 
-<form action="{% url 'core_update_rotativos' rotativos.id%}" method="POST"> 
-    {% csrf_token %}
-    
-    {{ r_form.as_p }}
+    <form action="{% url 'core_update_rotativos' rotativos.id%}" method="POST"> 
+        {% csrf_token %}
         
-    <button type="submit">Atualizar</button>
+        {{ r_form.as_p }}
         
-</form>
+        <button type="submit">Atualizar</button>
+        
+    </form>
 
-<a href="{% url 'core_delete_rotativos' rotativos.id %}" ><button> Deletar </button></a>
+    <a href="{% url 'core_delete_rotativos' rotativos.id %}" ><button> Deletar </button></a>
+{% endblock %}

@@ -1,17 +1,22 @@
-<h2>Lista Rotativos</h2>
+{% extends 'base.html' %}
 
-<ul>
-{% for rotativo in rotativos %}
-    <a href="{% url 'core_update_rotativos' rotativo.id %}"> <li> {{ rotativo.veiculo }} </li> </a>
-{%endfor%}
-</ul>
+{% block main %}
+
+    <h2>Lista Rotativos</h2>
+
+    <ul>
+        {% for rotativo in rotativos %}
+        <a href="{% url 'core_update_rotativos' rotativo.id %}"> <li> {{ rotativo.veiculo }} </li> </a>
+        {%endfor%}
+    </ul>
 
 
 
-<form action="{% url 'core_rotativos_novo' %}" method="POST"> {% csrf_token %}
-    
-    {{ r_form.as_p }}
-    
-    <button type="submit">Cadastrar</button>
-    
-</form>
+    <form action="{% url 'core_rotativos_novo' %}" method="POST"> {% csrf_token %}
+        
+        {{ r_form.as_p }}
+        
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+{% endblock %}

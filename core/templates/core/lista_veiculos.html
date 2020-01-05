@@ -2,24 +2,24 @@
 
  {% block main %}
 
-<h2>Lista Veiculos</h2>
+    <h2>Lista Veiculos</h2>
 
 
-<ul>
-{% for veiculo in veiculos %}
+    <ul>
+    {% for veiculo in veiculos %}
 
-<a href="{% url 'core_veiculo_update' veiculo.id %}"> <li> {{ veiculo.placa}} </li> </a>    
+    <a href="{% url 'core_veiculo_update' veiculo.id %}"> <li> {{ veiculo.placa}} </li> </a>    
 
-{%endfor%}
-</ul>
+    {%endfor%}
+    </ul>
 
 
 
-<form action="{% url 'core_veiculos_novo' %}" method="POST"> {% csrf_token %}
-    {{ v_form.as_p }}
-    
-    <button type="submit">Cadastrar</button>
-    
-</form>
+    <form action="{% url 'core_veiculos_novo' %}" method="POST"> {% csrf_token %}
+        {{ v_form.as_p }}
+        
+        <button type="submit">Cadastrar</button>
+        
+    </form>
 
 {% endblock %}

@@ -1,20 +1,25 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
 <h2>Lista Mensalistas</h2>
 
-<ul>
-{% for mensalista in mensalistas %}
+    <ul>
+        {% for mensalista in mensalistas %}
+        
+        <a href="{% url 'core_update_mensalistas' mensalista.id %}"> <li> {{ mensalista.veiculo }} - {{ mensalista.inicio }} </li> </a>
+        
+        
+        {%endfor%}
+    </ul>
 
-<a href="{% url 'core_update_mensalistas' mensalista.id %}"> <li> {{ mensalista.veiculo }} - {{ mensalista.inicio }} </li> </a>
-
- 
-{%endfor%}
-</ul>
 
 
-
-<form action="{% url 'core_mensalista_novo' %}" method="POST"> {% csrf_token %}
-    
-    {{ m_form.as_p }}
-    
-    <button type="submit">Cadastrar</button>
-    
-</form>
+    <form action="{% url 'core_mensalista_novo' %}" method="POST"> {% csrf_token %}
+        
+        {{ m_form.as_p }}
+        
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+{% endblock %}
