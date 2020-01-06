@@ -1,3 +1,5 @@
 devpark
 .vscode
 .idea
+*.sqlite3pip
+*pyc
