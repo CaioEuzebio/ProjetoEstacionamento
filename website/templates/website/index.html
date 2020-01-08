@@ -1,19 +1,74 @@
 {% extends 'website/base.html' %}
+{% load static %}
+
 
 {% block main%}
- 
-<div class="col" align="center">
     <div class="row">
-        <h1>Website in development:
-            
-            If you arrived here by social media please 
-            try to test the system that is done: 
-            <a href="https://estacionamento-app-heroku.herokuapp.com/accounts/login/" class="btn btn-primary">System</a>
-            <p></p>
-            <p></p>
-            <img src="https://png2.cleanpng.com/sh/e62c59cf53e26ce301366f1c844d5b90/L0KzQYm3VMIxN6J6fZH0aYP2gLBuTfNwdqR5iudsdHnyfn7AjCJsbaMyeeRsaHn3dbT7lgJidF5qhtlybnXogrr1h71kaaN5RadqZEnpQIK3V8U3OWY1Rqo5NkS5RIS8UcUzPGM4SqQ5OES7QIm1kP5o/kisspng-construction-worker-architectural-engineering-cart-5ad9f010756150.8064643515242322084808.png" alt="">
-
-        </h1>
-    </div>
+        <div class="col-6">
+            <h1>Estacionamento 24 Horas</h1>
+            <span>Segunrança e comodidade!</span>
+        </div>
+        <div class="col-6">
+            <img src="{% static 'img/header-img.png' %}" alt="logo-site">
+        </div>
 </div>
+
+    {% include 'website/menu.html' %}
+
+    <div class="row row-space">
+        <div class="col-6">
+            Em alguns países, os donos dos estabelecimentos são obrigados 
+            por lei a reservar uma porcentagem de vagas para motoristas que 
+            apresentam deficiências físicas.
+            Para entender mais sobre as vagas exclusivas de estacionamento 
+            rotativo, acesse o o blog do Zul Digital
+        </div>
+        <div class="col-6">
+            Zona Azul é o sistema de estacionamento rotativo nas ruas e avenidas 
+            públicas no Brasil. As vagas de estacionamento são sinalizadas e 
+            demarcadas pelo órgão de regulamentação de trânsito da cidade e possuem 
+            regras específicas dependendo da região, dia e horário. Por esse motivo, 
+            é preciso estar atento às placas de sinalização da via no momento em que 
+            deseja estacionar.
+        </div>
+    </div>
+    
+
+    <div class="row row-space">
+        <div class="col-4">
+            Dá-se o nome de seguro (do latim "securus"[1]) a todo 
+            contrato pelo qual uma das partes, segurador, se obriga 
+            a indenizar a outra, segurado, em caso da ocorrência de 
+            determinado sinistro, em troca do recebimento de um prêmio 
+            de seguro. 
+        </div>
+        <div class="col-4">
+            <img src="{% static 'img/seguranca-veicular.jpg' %}" width="350" height="200" alt="segurança">
+        </div>
+        <div class="col-4">
+            O seguro nasceu da necessidade do homem em controlar o risco. Existem 
+            indícios que já na Babilônia, 23 séculos antes de cristo, caravanas de 
+            cameleiros que cruzavam o deserto mutualizavam entre si os prejuízos com 
+            morte de animais. Na China antiga e no Império Romano também havia seguros. 
+        </div>
+    </div>
+
+    <div class="row row-space">
+        <div class="col-6">
+            Dá-se o nome de seguro (do latim "securus"[1]) a todo 
+            contrato pelo qual uma das partes, segurador, se obriga 
+            a indenizar a outra, segurado, em caso da ocorrência de 
+            determinado sinistro, em troca do recebimento de um prêmio 
+            de seguro. 
+        </div>
+        <div class="col-6">
+            O seguro nasceu da necessidade do homem em controlar o risco. Existem 
+            indícios que já na Babilônia, 23 séculos antes de cristo, caravanas de 
+            cameleiros que cruzavam o deserto mutualizavam entre si os prejuízos com 
+            morte de animais. Na China antiga e no Império Romano também havia seguros. 
+        </div>
+    </div>
+
+    {% include 'website/footer.html' %}
+
 {% endblock%}
