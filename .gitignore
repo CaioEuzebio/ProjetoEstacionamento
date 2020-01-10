@@ -3,4 +3,3 @@ devpark
 .idea
 *.sqlite3pip
 *pyc
-.env
