@@ -6,6 +6,7 @@ class PessoasForm(ModelForm):
     class Meta:
         model = Pessoa
         fields = '__all__'
+        
 
 
 
