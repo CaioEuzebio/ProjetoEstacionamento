@@ -10,7 +10,7 @@ DEBUG = config('DEBUG', default=False, cast=bool )
 
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'estacionamento-app-heroku.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'estacionamento24horas-app.herokuapp.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
