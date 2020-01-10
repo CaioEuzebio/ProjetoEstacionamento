@@ -1,4 +1,8 @@
 {
-    "python.pythonPath": "/usr/local/bin/python3.6.5",
-    "files.associations":  {"*.html": "html"}
+    "python.pythonPath": "/home/ceuzebio/anaconda3/bin/python",
+    "files.associations": {
+        "*.html": "html"
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": false
 }
