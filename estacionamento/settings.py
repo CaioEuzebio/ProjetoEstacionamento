@@ -19,7 +19,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
     'bootstrapform',
     'website',
     'core',
@@ -100,8 +99,6 @@ LOGIN_REDIRECT_URL = 'core_home'
 LOGOUT_REDIRECT_URL = 'login'
 
 AUTHENTICATION_BACKENDS = [
-        'social_core.backends.linkedin.LinkedinOAuth2',
-        'social_core.backends.instagram.InstagramOAuth2',
-        'social_core.backends.facebook.FacebookOAuth2',
+
         'django.contrib.auth.backends.ModelBackend',
     ]
