@@ -1,6 +1,6 @@
 devpark
 .vscode
 .idea
-#*.sqlite3pip
+*.sqlite3pip
 *pyc
 .env
