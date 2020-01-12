@@ -2,6 +2,12 @@
 
 * https://estacionamento24h.herokuapp.com/
 
+Test User:
+
+User: usertest
+Password: @Pass321
+
+
 # Progress Status Overview:
 
 ![](progress.gif)
