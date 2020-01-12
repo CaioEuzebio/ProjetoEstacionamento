@@ -4,8 +4,8 @@
 
 Test User:
 
-User: usertest
-Password: @Pass321
+* User: usertest
+* Password: @Pass321
 
 
 # Progress Status Overview:
