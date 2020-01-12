@@ -1,8 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .models import Contato
+from django.urls import path
+
+
 
 def website_home(request):
     return render(request, 'website/index.html')
+
+
+
+def servicos(request):
+    return render(request, 'website/servicos.html')
+
+
+
+def sobre(request):
+    return render(request, 'website/sobre.html')
+
+
+
+def planos(request):
+    return render(request, 'website/planos.html')
+
 
 def contato(request):
     erro = ''
@@ -24,5 +44,6 @@ def contato(request):
             erro = 'Mensagem enviada com sucesso!'
 
     return render(request, 'website/contato.html', {'erro':erro})
+
 
 

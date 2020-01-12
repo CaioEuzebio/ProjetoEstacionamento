@@ -1,19 +1,23 @@
+{% extends 'website/base.html' %}
+{% load static %}
 
+
+{% block main%}
 
 <div class="row">
     <div class="col-12">
         <ul class="nav nav-tabs" style="justify-content: center;">
             <li class="nav-item">
-              <a class="nav-link active" href="{% url 'website_home' %}">Home</a>
+              <a class="nav-link" href="{% url 'website_home' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'servicos' %}">Serviços</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'planos' %}">Planos</a>
+                <a class="nav-link active" href="{% url 'planos' %}">Planos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="{% url 'servicos' %}">Sobre</a>
+                <a class="nav-link" href="{% url 'sobre' %}">Sobre</a>
               </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contato' %}">Contato</a>
@@ -24,3 +28,5 @@
           </ul>
     </div>
 </div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+
+{% block main%}
+
+
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-tabs" style="justify-content: center;">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'website_home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'servicos' %}">Serviços</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'planos' %}">Planos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'sobre' %}">Sobre</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contato' %}">Contato</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'core_home' %}">Sistema</a>
+              </li>
+          </ul>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 50px;">
+  
+    <div class="col" align="center">
+    <div class="row">
+        <div class="col">
+            <h1>
+                Conheça nossos serviloç!
+            </h1>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-6">
+            <h3>
+                Mensalistas.
+            </h3>
+            <p>
+                Conheça todas as vantagens de ser um mensalista, acesse nosso catalogo e conheça os descontos nossa proposta
+                é oferecer comodidade e segurança aos clientes. Agende uma visita e conheça nossas unidades, conheça nossos
+                profissionais.
+            </p>
+            <img src="https://www.metro1.com.br/noticias/68886,defesa-civil-aponta-problemas-em-estacionamento-do-shopping
+            -paralela-veja-video-3.jpg" alt="nosso-estacionamento" width="400" height="300">
+        </div>
+        <div class="col-6">
+            <h3>
+                Rotativos.
+            </h3>
+            <p>
+                Conheça todas as vantagens de ser um mensalista, acesse nosso catalogo e conheça os descontos nossa proposta
+                é oferecer comodidade e segurança aos clientes. Agende uma visita e conheça nossas unidades, conheça nossos
+                profissionais.
+            </p>
+            <img src="https://portaldotransito.com.br/wp-content/uploads/2019/04/o-que-e-um-estacionamento-rotativo_menor.jpg" width="400" height="300" alt="">
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock%}
